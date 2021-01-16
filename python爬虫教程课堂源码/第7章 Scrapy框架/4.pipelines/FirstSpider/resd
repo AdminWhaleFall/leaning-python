@@ -1,0 +1,69 @@
+编写item pipeline
+编写item pipeline很简单，item pipiline组件是一个独立的Python类，其中process_item()方法必须实现:
+
+import something
+
+
+
+class SomethingPipeline(object):
+    def __init__(self):    
+        # 可选实现，做参数初始化等
+        # doing something
+
+    def process_item(self, item, spider):
+        # item (Item 对象) – 被爬取的item
+        # spider (Spider 对象) – 爬取该item的spider
+        # 这个方法必须实现，每个item pipeline组件都需要调用该方法，
+        # 这个方法必须返回一个 Item 对象，被丢弃的item将不会被之后的pipeline组件所处理。
+        return item
+
+    def open_spider(self, spider):
+        # spider (Spider 对象) – 被开启的spider
+        # 可选实现，当spider被开启时，这个方法被调用。
+
+    def close_spider(self, spider):
+        # spider (Spider 对象) – 被关闭的spider
+        # 可选实现，当spider被关闭时，这个方法被调用
+
+
+
+
+完善之前的案例：
+item写入JSON文件
+以下pipeline将所有(从所有'spider'中)爬取到的item，存储到一个独立地items.json 文件，每行包含一个序列化为'JSON'格式的'item':
+
+
+
+import json
+
+class ItcastJsonPipeline(object):
+
+    def __init__(self):
+        self.file = open('teacher.json', 'wb')
+
+    def process_item(self, item, spider):
+        content = json.dumps(dict(item), ensure_ascii=False) + "\n"
+        self.file.write(content)
+        return item
+
+    def close_spider(self, spider):
+        self.file.close()
+
+
+
+启用一个Item Pipeline组件
+为了启用Item Pipeline组件，必须将它的类添加到 settings.py文件ITEM_PIPELINES 配置，就像下面这个例子:
+
+# Configure item pipelines
+# See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
+ITEM_PIPELINES = {
+    #'mySpider.pipelines.SomePipeline': 300,
+    "mySpider.pipelines.ItcastJsonPipeline":300
+}
+分配给每个类的整型值，确定了他们运行的顺序，item按数字从低到高的顺序，通过pipeline，通常将这些数字定义在0-1000范围内（0-1000随意设置，数值越低，组件的优先级越高）
+
+重新启动爬虫
+将parse()方法改为4.2中最后思考中的代码，然后执行下面的命令：
+
+scrapy crawl itcast
+查看当前目录是否生成teacher.json

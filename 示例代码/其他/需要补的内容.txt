@@ -1,0 +1,37 @@
+a=3
+b="aaa"
+print(a+b)
+最新版可以用！
+
+
+复数
+复数是由一个实数和一个虚数组合构成，表示为：x+yj
+x,y是一对有序浮点数，其中 x 是实数部分，y 是虚数部分。
+
+aa=123-12j
+print aa.real  # 实数部分 123.0  
+print aa.imag  # 虚数部分 -12.0
+
+
+
+
+python2和python3 input函数的变更
+
+python2中的输入函数：
+
+1.input()
+#如果输入是一个数学计算式，会自动执行计算得出结果。
+
+
+2.raw_input()
+#完全默认为str类型
+
+
+
+python3中的输入函数：
+
+1.input() 
+#完全默认为str类型
+
+
+
