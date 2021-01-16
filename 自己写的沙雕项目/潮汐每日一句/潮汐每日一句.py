@@ -67,7 +67,4 @@ def SendXnote(username, content):
 content, author, pic_url = GetJuzhi()
 strr = content+"———"+author
 print("[Success]"+strr)
-SendXnote("潮汐一言",strr)
-
-
-
+SendXnote("潮汐一言", strr)
