@@ -2,15 +2,14 @@
 Author: whalefall
 Date: 2021-01-22 14:42:59
 LastEditors: whalefall
-LastEditTime: 2021-01-23 21:09:22
+LastEditTime: 2021-01-23 21:11:14
 Description: 生成百度热点词云图
 '''
 from wordcloud import WordCloud
 import jieba  # 中文分词
-import sys
+import syss+
 
 path = sys.path[0]
-
 
 def draw(text):
     wordcloud = WordCloud(font_path="C:/Windows/Fonts/simyou.ttf",  # SIMYOU.TTF simkai.ttf
