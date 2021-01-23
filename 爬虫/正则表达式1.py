@@ -1,6 +1,13 @@
+'''
+Author: whalefall
+Date: 2021-01-22 14:42:59
+LastEditors: whalefall
+LastEditTime: 2021-01-23 10:36:11
+Description: python正则表达式学习
+'''
 #正则表达式
 #数据筛选(针对字符串)的表达式 (匹配)
-
+zhenzhe
 import re #正则表达式模块
 '''
 strr="花子君八寻宁宁人鱼公主"
