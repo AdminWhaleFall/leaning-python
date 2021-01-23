@@ -1,3 +1,10 @@
+'''
+Author: whalefall
+Date: 2021-01-22 14:42:59
+LastEditors: whalefall
+LastEditTime: 2021-01-23 21:09:22
+Description: 生成百度热点词云图
+'''
 from wordcloud import WordCloud
 import jieba  # 中文分词
 import sys
@@ -6,7 +13,7 @@ path = sys.path[0]
 
 
 def draw(text):
-    wordcloud = WordCloud(font_path="C:/Windows/Fonts/simyou.ttf", #SIMYOU.TTF simkai.ttf
+    wordcloud = WordCloud(font_path="C:/Windows/Fonts/simyou.ttf",  # SIMYOU.TTF simkai.ttf
                           # background_color="white",
                           width=1080,
                           height=720,
@@ -23,7 +30,7 @@ def draw(text):
                           ).generate(text)
 
     img = wordcloud.to_image()
-    save=wordcloud.to_file("{}//平洲二中2018届名字.jpg".format(path))
+    save = wordcloud.to_file("{}//平洲二中2018届名字.jpg".format(path))
     img.show()
 
 
@@ -34,7 +41,6 @@ def ch_jieba(text):
     return result
 
 
-
 # with open("{}//撒野.txt".format(path), "r", encoding="utf8") as f:
 #     t = f.read().replace("\n", "").replace("\r", "").replace(" ", "").replace("-", "")
 #     # print(t)
@@ -42,19 +48,11 @@ def ch_jieba(text):
 # r=ch_jieba(t)
 # draw(r)
 
-with open("{}//pzez_name.txt".format(path),"r", encoding="utf8") as f:
-    n=f.readlines()
-    name_str=""
+with open("{}//pzez_name.txt".format(path), "r", encoding="utf8") as f:
+    n = f.readlines()
+    name_str = ""
     for name in n:
-        name=name.replace("\n","")
-        name_str=name_str+name+","
+        name = name.replace("\n", "")
+        name_str = name_str+name+","
     print(name_str)
     draw(name_str)
-
-
-
-
-
-
-
-
