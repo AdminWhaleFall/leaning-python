@@ -11,9 +11,9 @@ import time
 import re
 import sys
 # 在控制台显示绚丽的色彩Windows平台
-import colorama
-from colorama import init, Fore, Back, Style
-init(autoreset=True)
+# import colorama
+# from colorama import init, Fore, Back, Style
+# init(autoreset=True)
 
 # 从https://www.ipaddress.com获取最新的ip地址
 
