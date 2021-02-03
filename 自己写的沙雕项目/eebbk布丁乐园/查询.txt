@@ -1,0 +1,24 @@
+POST https://mark-incentive.eebbk.net/app/mark/getMarkDetail HTTP/1.1
+deviceModel: S3 Pro
+apkVersionCode: 1000100
+deviceOSVersion: V1.6.0_200516
+machineId: 70S3S8818DBCJ
+apkPackageName: com.eebbk.puddingmall
+token: 9aa7ea3400c7499e8cf562aa933059c59602dcfcde693e1017ad43d579916716dc6007f864e0faf0
+accountId: 25526831
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 292
+Host: mark-incentive.eebbk.net
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/3.12.0
+
+appKey=200&apkVersionCode=1000100&apkPackageName=com.eebbk.puddingmall&deviceOSVersion=V1.6.0_200516&pi=1&token=9aa7ea3400c7499e8cf562aa933059c59602dcfcde693e1017ad43d579916716dc6007f864e0faf0&ps=10&accountId=25526831&endTime=-1&startTime=-1&deviceModel=S3%20Pro&machineId=70S3S8818DBCJ&type=
+HTTP/1.1 200 OK
+Server: nginx/1.14.2
+Date: Wed, 27 Jan 2021 03:14:45 GMT
+Content-Type: application/json;charset=UTF-8
+Content-Length: 1643
+Connection: keep-alive
+
+{"stateCode":"0","stateInfo":"成功","data":[{"accountId":"25526831","mark":5,"type":0,"tradeTime":1611716279000,"appName":"个人中心","moduleName":"每日任务","ruleDescription":"每日登录","apkPackageName":null},{"accountId":"25526831","mark":5,"type":0,"tradeTime":1611716180000,"appName":"个人中心","moduleName":"每日任务","ruleDescription":"每日光顾","apkPackageName":null},{"accountId":"25526831","mark":2,"type":0,"tradeTime":1611673741000,"appName":"个人中心","moduleName":"每日签到","ruleDescription":"星期二签到","apkPackageName":null},{"accountId":"25526831","mark":5,"type":0,"tradeTime":1611673685000,"appName":"个人中心","moduleName":"每日任务","ruleDescription":"每日登录","apkPackageName":null},{"accountId":"25526831","mark":2,"type":0,"tradeTime":1611537529000,"appName":"个人中心","moduleName":"每日任务","ruleDescription":"欢迎光临","apkPackageName":null},{"accountId":"25526831","mark":5,"type":0,"tradeTime":1611452779000,"appName":"个人中心","moduleName":"每日任务","ruleDescription":"每日光顾","apkPackageName":null},{"accountId":"25526831","mark":2,"type":0,"tradeTime":1609641867000,"appName":"个人中心","moduleName":"每日任务","ruleDescription":"欢迎光临","apkPackageName":null},{"accountId":"25526831","mark":2,"type":0,"tradeTime":1598104598000,"appName":"个人中心","moduleName":"每日任务","ruleDescription":"欢迎光临","apkPackageName":null},{"accountId":"25526831","mark":2,"type":0,"tradeTime":1597714436000,"appName":"个人中心","moduleName":"每日任务","ruleDescription":"欢迎光临","apkPackageName":null}]}

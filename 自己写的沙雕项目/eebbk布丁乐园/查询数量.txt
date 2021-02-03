@@ -1,0 +1,24 @@
+POST https://mark-incentive.eebbk.net/app/mark/getTotalMark HTTP/1.1
+deviceModel: S3 Pro
+apkVersionCode: 4060301
+deviceOSVersion: V1.6.0_200516
+machineId: 70S3S8818DBCJ
+apkPackageName: com.bbk.personal
+token: 9aa7ea3400c7499e8cf562aa933059c59602dcfcde693e1017ad43d579916716dc6007f864e0faf0
+accountId: 25526831
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 276
+Host: mark-incentive.eebbk.net
+Connection: Keep-Alive
+Accept-Encoding: gzip
+User-Agent: okhttp/3.12.0
+
+appKey=%E7%94%B3%E8%AF%B7%E7%9A%84appkey&apkVersionCode=4060301&apkPackageName=com.bbk.personal&deviceOSVersion=V1.6.0_200516&token=9aa7ea3400c7499e8cf562aa933059c59602dcfcde693e1017ad43d579916716dc6007f864e0faf0&accountId=25526831&deviceModel=S3%20Pro&machineId=70S3S8818DBCJ
+HTTP/1.1 200 OK
+Server: nginx/1.14.2
+Date: Wed, 27 Jan 2021 03:16:19 GMT
+Content-Type: application/json;charset=UTF-8
+Content-Length: 86
+Connection: keep-alive
+
+{"stateCode":"0","stateInfo":"成功","data":{"accountId":"25526831","totalMark":153}}
