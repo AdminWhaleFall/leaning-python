@@ -2,8 +2,8 @@
 Author: whalefall
 Date: 2021-02-03 00:02:28
 LastEditors: whalefall
-LastEditTime: 2021-02-03 09:34:16
-Description: file content
+LastEditTime: 2021-02-03 09:44:32
+Description: 多线程请求`qq110.net`信誉查询平台 认真复习了一下多线程知识点
 '''
 import requests
 from fake_useragent import UserAgent
