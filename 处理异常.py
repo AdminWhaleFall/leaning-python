@@ -25,6 +25,7 @@ for i in a:
 pwd = "123456"
 if len(pwd) < 8:
     # 实例化Exception类 传入自定义错误信息
+    # 语句中Exception是异常的类型（例如ValueError），参数是一个异常参数值。
     ex = Exception("密码不能低于8位数")
     # print("密码不能低于8位数")
     raise ex  # 抛出自定义异常 直接让程序报错
