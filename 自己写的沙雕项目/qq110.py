@@ -2,7 +2,7 @@
 Author: whalefall
 Date: 2021-02-03 00:02:28
 LastEditors: whalefall
-LastEditTime: 2021-02-03 09:44:32
+LastEditTime: 2021-02-03 20:24:02
 Description: 多线程请求`qq110.net`信誉查询平台 认真复习了一下多线程知识点
 '''
 import requests
@@ -29,23 +29,27 @@ def qqID(content,qqID):
         'qq': str(qqID)
     }
 
-    response = requests.post(
-        'http://qq110.net/', headers=headers, data=data, verify=False)
-
-    print(content,response.url, qqID)
+    try:
+        response = requests.post(
+            'http://qq110.net/', headers=headers, data=data, verify=False)
+        print(content,response.url, qqID)
+    except ConnectionError:
+        print("\033[1;30;41m[Error]服务器连接超时!\033[0m")
+    except Exception as e:
+        print("\033[1;30;41m[Error]服务器未知错误!\033[0m",e)
 
 
 def main(th):
     while True:
-        qq = random.randint(2734184475,9999999999)
-        qqID("线程{}".format(str(th)), qq)
+        qq = random.randint(1000000000,9999999999)
+        qqID("\033[1;34m 线程{} \033[0m".format(str(th)), qq)
 
 
 # 敲黑板 多线程的实现方式
 if __name__ == '__main__':
     threads = []
     thread_name = []
-    for i in range(1,129):
+    for i in range(1,257):
         thread_name.append(i)
     
     for name in thread_name:
