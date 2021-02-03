@@ -2,7 +2,7 @@
 Author: whalefall
 Date: 2021-02-03 00:02:28
 LastEditors: whalefall
-LastEditTime: 2021-02-03 20:24:02
+LastEditTime: 2021-02-03 20:30:37
 Description: 多线程请求`qq110.net`信誉查询平台 认真复习了一下多线程知识点
 '''
 import requests
@@ -42,7 +42,7 @@ def qqID(content,qqID):
 def main(th):
     while True:
         qq = random.randint(1000000000,9999999999)
-        qqID("\033[1;34m 线程{} \033[0m".format(str(th)), qq)
+        qqID("\033[1;30;44m 线程{} \033[0m".format(str(th)), qq)
 
 
 # 敲黑板 多线程的实现方式
