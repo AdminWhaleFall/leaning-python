@@ -2,20 +2,23 @@
 # GitHub地址：https://github.com/ZYunH/zmail/blob/master/README-cn.md
 import zmail
 import datetime
-#邮箱密码/授权码
-sendEmail="whalefall2020@163.com"
-password="BFEPKZGIINCMBEGM"
-#smtp发信配置
-smtp_host="smtp.163.com"
-smtp_port=994
-smtp_ssl=True #是否使用ssl加密传输发信
-#pop收信配置
-pop_host="pop.163.com"
-pop_port=995
-# 自定义 邮件服务器对象 
-ServerPop=zmail.server(sendEmail,password,pop_host=pop_host,pop_port=pop_port)
-ServerStmp=zmail.server(sendEmail,password,smtp_host=smtp_host,smtp_port=smtp_port,smtp_ssl=smtp_ssl)
-#获取最新一封邮件
+# 邮箱密码/授权码
+sendEmail = "whalefall2020@163.com"
+password = "BFEPKZGIINCMBEGM"
+# smtp发信配置
+smtp_host = "smtp.163.com"
+smtp_port = 994
+smtp_ssl = True  # 是否使用ssl加密传输发信
+# pop收信配置
+pop_host = "pop.163.com"
+pop_port = 995
+# 自定义 邮件服务器对象
+ServerPop = zmail.server(
+    sendEmail, password, pop_host=pop_host, pop_port=pop_port)
+ServerStmp = zmail.server(
+    sendEmail, password, smtp_host=smtp_host, smtp_port=smtp_port, smtp_ssl=smtp_ssl)
+	
+# 获取最新一封邮件
 # serverPop.get_latest()
 
 # 获取指定ID的邮件 同样将邮件设置为已读
@@ -25,7 +28,7 @@ ServerPop.get_mail(1)
 # print(mail['subject']) #取出邮件主题
 # zmail.show(mail) #打印邮件
 
-#查看邮件的所有内容
+# 查看邮件的所有内容
 # for k,v in mail.items():
 # 	print(k,v)
 
@@ -35,25 +38,28 @@ print(ServerPop.stat())
 # 获取指定ID的邮件（位于1至邮件数量） 同样将邮件设置为已读
 # zmail.show(serverPop.get_mail(2))
 
-#取出指定范围内的邮件
-mails=ServerPop.get_mails(subject=None,start_time=None,end_time=None,sender=None,start_index=1,end_index=1)
+# 取出指定范围内的邮件
+mails = ServerPop.get_mails(subject=None, start_time=None,
+                            end_time=None, sender=None, start_index=1, end_index=1)
 # zmail.show(mails)
-print(mails[0]["subject"]) #取出主题
+print(mails[0]["subject"])  # 取出主题
 print(mails[0]['from'])
 
-#删除指定ID的邮件
+# 删除指定ID的邮件
 # serverPop.delete(2)
 
-#stmp pop 运行状态
+# stmp pop 运行状态
 print(ServerPop.smtp_able())
 print(ServerStmp.pop_able())
 
-#发送email
-#构造email
+# 发送email
+# 构造email
+
+
 def sendEmail(tomail):
-	now = datetime.datetime.now()
-	time=now.strftime("%Y-%m-%d %H:%M:%S")
-	html='''
+    now = datetime.datetime.now()
+    time = now.strftime("%Y-%m-%d %H:%M:%S")
+    html = '''
 	<html>
 	 <head></head>
 	 <body>
@@ -81,22 +87,20 @@ def sendEmail(tomail):
 	 </body>
 	</html>
 	'''.format(time)
-	mail={
-		"subject":"鲸云|邮件通知",
-		#可自定义发送者的名字
-		# "from":"鲸落云 <whalefall@whalefall.online>",
-		"content_text":"鲸云|Python邮件通知测试",
-		#可读取HTML文件
-		"content_html":html,
-		#附件
-		"attachments":r"C:\Users\27341\Desktop\name.txt",
+    mail = {
+        "subject": "鲸云|邮件通知",
+        # 可自定义发送者的名字
+        # "from":"鲸落云 <whalefall@whalefall.online>",
+        "content_text": "鲸云|Python邮件通知测试",
+        # 可读取HTML文件
+        "content_html": html,
+        # 附件
+        "attachments": r"C:\Users\27341\Desktop\name.txt",
 
-	}
+    }
 
-	#发件人可以给一整个列表
-	ServerStmp.send_mail(tomail,mail)
+    # 发件人可以给一整个列表
+    ServerStmp.send_mail(tomail, mail)
 
 
 sendEmail("2734184475@qq.com")
-
-
