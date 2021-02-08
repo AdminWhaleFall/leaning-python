@@ -2,7 +2,7 @@
 Author: whalefall
 Date: 2021-02-04 18:08:27
 LastEditors: whalefall
-LastEditTime: 2021-02-06 22:50:57
+LastEditTime: 2021-02-07 10:15:25
 Description: Q绑数据导入sqlite和MySQL
 '''
 
@@ -34,9 +34,9 @@ def writeDB(qq, phone):
 
 
 # mysql数据库参数:
-host = "203.195.144.247"
+host = "203.195.135.71"
 user = "root"
-passwd = "abc123"
+passwd = "123456"
 # 初始化mysql数据库
 
 
