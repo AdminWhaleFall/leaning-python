@@ -3,7 +3,7 @@ Author: whalefall
 Date: 2021-02-08 10:16:37
 LastEditors: whalefall
 LastEditTime: 2021-02-08 17:17:03
-Description: ServerStatus|其他模块函数文件
+Description: ServerStatus|其他模块函数文件|树莓派推送测试
 '''
 import requests
 import random
