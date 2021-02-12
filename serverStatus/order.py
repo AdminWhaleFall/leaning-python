@@ -34,3 +34,5 @@ def checkNetwork():
 # 获取系统具体状态
 def getSystemStatus():
 
+
+checkNetwork()
